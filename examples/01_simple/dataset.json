@@ -1,0 +1,14 @@
+[
+  {
+    "input": { "question": "Which city hosts PyData Amsterdam?" },
+    "expected_output": { "answer": "Amsterdam" }
+  },
+  {
+    "input": { "question": "What does RAG stand for?" },
+    "expected_output": { "answer": "retrieval-augmented generation" }
+  },
+  {
+    "input": { "question": "What numeric result does an LLM evaluator produce?" },
+    "expected_output": { "answer": "score" }
+  }
+]

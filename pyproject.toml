@@ -1,0 +1,16 @@
+[project]
+name = "pydata-amsterdam"
+version = "0.1.0"
+description = "Hands-on LLM evaluation tutorial for PyData Amsterdam"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "ipykernel>=7,<8",
+    "jupyterlab>=4,<5",
+    "langchain>=1.0,<2",
+    "langchain-openrouter>=0.1,<1",
+    "langfuse>=4,<5",
+    "langsmith>=0.4,<1",
+    "pandas>=2.2,<4",
+    "python-dotenv>=1.0,<2",
+]
