@@ -1,0 +1,237 @@
+{
+  "talks": [
+    {
+      "talk_id": "t01",
+      "title": "Transformers Without the Hype",
+      "speaker": "Lena Vos",
+      "topic": "nlp",
+      "day": "Thursday",
+      "start": "10:30",
+      "end": "11:10",
+      "room": "Zaal 1"
+    },
+    {
+      "talk_id": "t02",
+      "title": "Shipping Models on Friday",
+      "speaker": "Ravi Menon",
+      "topic": "mlops",
+      "day": "Thursday",
+      "start": "10:30",
+      "end": "11:10",
+      "room": "Zaal 2"
+    },
+    {
+      "talk_id": "t03",
+      "title": "Evaluating LLM Applications",
+      "speaker": "Mira Okafor",
+      "topic": "nlp",
+      "day": "Thursday",
+      "start": "11:20",
+      "end": "12:00",
+      "room": "Zaal 1"
+    },
+    {
+      "talk_id": "t04",
+      "title": "Charts That Explain Themselves",
+      "speaker": "Joost Bakker",
+      "topic": "viz",
+      "day": "Thursday",
+      "start": "11:20",
+      "end": "12:00",
+      "room": "Zaal 2"
+    },
+    {
+      "talk_id": "t05",
+      "title": "Streaming with Arrow",
+      "speaker": "Ana Ferreira",
+      "topic": "data-eng",
+      "day": "Thursday",
+      "start": "13:00",
+      "end": "13:40",
+      "room": "Zaal 1"
+    },
+    {
+      "talk_id": "t06",
+      "title": "Multilingual Embeddings in Practice",
+      "speaker": "Yusuf Aydin",
+      "topic": "nlp",
+      "day": "Thursday",
+      "start": "13:00",
+      "end": "13:40",
+      "room": "Zaal 2"
+    },
+    {
+      "talk_id": "t07",
+      "title": "Feature Stores, Honestly",
+      "speaker": "Ravi Menon",
+      "topic": "mlops",
+      "day": "Thursday",
+      "start": "14:00",
+      "end": "14:40",
+      "room": "Zaal 1"
+    },
+    {
+      "talk_id": "t08",
+      "title": "Small Models, Big Wins",
+      "speaker": "Lena Vos",
+      "topic": "nlp",
+      "day": "Friday",
+      "start": "10:30",
+      "end": "11:10",
+      "room": "Zaal 1"
+    },
+    {
+      "talk_id": "t09",
+      "title": "Interactive Dashboards with Polars",
+      "speaker": "Sofia Klein",
+      "topic": "viz",
+      "day": "Friday",
+      "start": "10:30",
+      "end": "11:10",
+      "room": "Zaal 2"
+    },
+    {
+      "talk_id": "t10",
+      "title": "Testing Data Pipelines",
+      "speaker": "Ana Ferreira",
+      "topic": "data-eng",
+      "day": "Friday",
+      "start": "11:20",
+      "end": "12:00",
+      "room": "Zaal 1"
+    },
+    {
+      "talk_id": "t11",
+      "title": "Monitoring Drift in Production",
+      "speaker": "Tom de Vries",
+      "topic": "mlops",
+      "day": "Friday",
+      "start": "13:00",
+      "end": "13:40",
+      "room": "Zaal 1"
+    },
+    {
+      "talk_id": "t12",
+      "title": "Colour for Data People",
+      "speaker": "Sofia Klein",
+      "topic": "viz",
+      "day": "Friday",
+      "start": "13:00",
+      "end": "13:40",
+      "room": "Zaal 2"
+    }
+  ],
+  "examples": [
+    {
+      "input": {
+        "request": "I am interested in NLP talks on Thursday."
+      },
+      "expected_output": {
+        "talks": [
+          {
+            "title": "Transformers Without the Hype",
+            "speaker": "Lena Vos",
+            "day": "Thursday",
+            "start": "10:30"
+          },
+          {
+            "title": "Evaluating LLM Applications",
+            "speaker": "Mira Okafor",
+            "day": "Thursday",
+            "start": "11:20"
+          },
+          {
+            "title": "Multilingual Embeddings in Practice",
+            "speaker": "Yusuf Aydin",
+            "day": "Thursday",
+            "start": "13:00"
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "request": "Which MLOps talks are there?"
+      },
+      "expected_output": {
+        "talks": [
+          {
+            "title": "Shipping Models on Friday",
+            "speaker": "Ravi Menon",
+            "day": "Thursday",
+            "start": "10:30"
+          },
+          {
+            "title": "Feature Stores, Honestly",
+            "speaker": "Ravi Menon",
+            "day": "Thursday",
+            "start": "14:00"
+          },
+          {
+            "title": "Monitoring Drift in Production",
+            "speaker": "Tom de Vries",
+            "day": "Friday",
+            "start": "13:00"
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "request": "Show me the visualisation talks on Friday."
+      },
+      "expected_output": {
+        "talks": [
+          {
+            "title": "Interactive Dashboards with Polars",
+            "speaker": "Sofia Klein",
+            "day": "Friday",
+            "start": "10:30"
+          },
+          {
+            "title": "Colour for Data People",
+            "speaker": "Sofia Klein",
+            "day": "Friday",
+            "start": "13:00"
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "request": "I want to learn about data engineering."
+      },
+      "expected_output": {
+        "talks": [
+          {
+            "title": "Streaming with Arrow",
+            "speaker": "Ana Ferreira",
+            "day": "Thursday",
+            "start": "13:00"
+          },
+          {
+            "title": "Testing Data Pipelines",
+            "speaker": "Ana Ferreira",
+            "day": "Friday",
+            "start": "11:20"
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "request": "What is on Friday morning about NLP?"
+      },
+      "expected_output": {
+        "talks": [
+          {
+            "title": "Small Models, Big Wins",
+            "speaker": "Lena Vos",
+            "day": "Friday",
+            "start": "10:30"
+          }
+        ]
+      }
+    }
+  ]
+}
