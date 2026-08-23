@@ -1,0 +1,14 @@
+# Start Qdrant for this lesson.
+#   docker compose up -d      (or: podman-compose up -d)
+# Dashboard: http://localhost:6333/dashboard
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: pydata-qdrant
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+
+volumes:
+  qdrant_storage:

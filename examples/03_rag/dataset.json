@@ -1,0 +1,84 @@
+{
+  "documents": [
+    {
+      "doc_id": "venue",
+      "title": "The venue",
+      "text": "PyData Amsterdam takes place at Kromhouthal, a former shipyard hall in Amsterdam Noord. Doors open at 08:30 on both days. All talks happen in two rooms, Zaal 1 and Zaal 2, on the ground floor."
+    },
+    {
+      "doc_id": "travel",
+      "title": "Getting to the venue",
+      "text": "From Amsterdam Centraal, take the free ferry to NDSM and walk ten minutes east along the water. There is covered bicycle parking next to the entrance. The venue has no car parking, so please do not come by car."
+    },
+    {
+      "doc_id": "wifi",
+      "title": "Wifi and network",
+      "text": "The guest network is called PyData-Guest. The password is printed on the back of your badge. No registration or login page is needed, so if a login page appears, reconnect to PyData-Guest."
+    },
+    {
+      "doc_id": "food",
+      "title": "Food and drinks",
+      "text": "Lunch is served at 12:30 in the main hall on both days. All lunch options are vegetarian, and vegan and gluten free meals are labelled. Coffee, tea and water are available all day next to the registration desk."
+    },
+    {
+      "doc_id": "conduct",
+      "title": "Code of conduct",
+      "text": "We expect every attendee to be respectful and considerate. If something makes you uncomfortable, speak to any staff member wearing a purple shirt. Reports can also be sent to conduct@pydata-amsterdam.example, and are handled confidentially."
+    },
+    {
+      "doc_id": "tickets",
+      "title": "Tickets and badges",
+      "text": "Collect your badge at the registration desk near the north entrance. Your badge must be visible inside the venue. A green lanyard means you are happy to be photographed, and a red lanyard means you are not."
+    },
+    {
+      "doc_id": "accessibility",
+      "title": "Accessibility",
+      "text": "The north entrance is step free and is the accessible way into the building. Both rooms and the toilets are reachable without stairs. A quiet room is available on the first floor for anyone who needs a break."
+    },
+    {
+      "doc_id": "schedule",
+      "title": "Programme",
+      "text": "The conference runs for two days, Thursday and Friday. Regular talks are 40 minutes including questions. Lightning talks are on Friday at 16:00 and you can sign up for them at the registration desk."
+    },
+    {
+      "doc_id": "help",
+      "title": "Getting help",
+      "text": "The help desk is at the registration desk in the main hall and is open from 08:30 to 18:00. Lost property is kept there. You can also reach the organisers at hello@pydata-amsterdam.example."
+    },
+    {
+      "doc_id": "recording",
+      "title": "Recordings and slides",
+      "text": "All talks in Zaal 1 are recorded and published on our YouTube channel about four weeks after the conference. Talks in Zaal 2 are not recorded. Speakers upload their slides to the programme page during the conference."
+    }
+  ],
+  "examples": [
+    {
+      "input": { "question": "How do I connect to the wifi?" },
+      "expected_output": { "doc_ids": ["wifi"], "answer": "PyData-Guest" }
+    },
+    {
+      "input": { "question": "What time is lunch?" },
+      "expected_output": { "doc_ids": ["food"], "answer": "12:30" }
+    },
+    {
+      "input": { "question": "How do I get there from Amsterdam Centraal?" },
+      "expected_output": { "doc_ids": ["travel"], "answer": "ferry" }
+    },
+    {
+      "input": { "question": "Someone is making me uncomfortable. Who do I talk to?" },
+      "expected_output": { "doc_ids": ["conduct"], "answer": "purple" }
+    },
+    {
+      "input": { "question": "Will my talk in Zaal 2 be recorded?" },
+      "expected_output": { "doc_ids": ["recording"], "answer": "not recorded" }
+    },
+    {
+      "input": { "question": "I use a wheelchair. How do I reach the venue and get inside?" },
+      "expected_output": { "doc_ids": ["travel", "accessibility"], "answer": "north entrance" }
+    },
+    {
+      "input": { "question": "I lost my bag and I need a new badge. Where do I go?" },
+      "expected_output": { "doc_ids": ["help", "tickets"], "answer": "registration desk" }
+    }
+  ]
+}
