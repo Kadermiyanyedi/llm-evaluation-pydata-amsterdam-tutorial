@@ -1,0 +1,7 @@
+[
+  {"id":"returns","title":"Returns","text":"Unused products can be returned within 14 days of delivery. A return must be approved before the customer ships the item. Refunds are issued after warehouse inspection; never promise an instant refund."},
+  {"id":"damaged","title":"Damaged items","text":"For an item damaged on arrival, apologize, collect the order number and create a priority support ticket. The customer does not need to pay return shipping. Do not promise a refund before review."},
+  {"id":"delivery","title":"Delivery delays","text":"Check the order status before answering. If tracking has not updated for five days, create a delivery investigation ticket. Do not invent a delivery date."},
+  {"id":"refunds","title":"Refund timing","text":"After a return passes inspection, refunds are sent to the original payment method within 5–7 business days. Banks may take additional time to display the payment."},
+  {"id":"privacy","title":"Privacy and identity","text":"Never reveal an order unless the supplied email matches the order email. Ask the customer to use a private support channel for identity verification."}
+]

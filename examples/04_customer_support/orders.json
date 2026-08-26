@@ -1,0 +1,7 @@
+[
+  {"order_id":"ORD-1001","email":"ada@example.com","status":"delivered","days_since_delivery":3,"tracking_stale_days":0,"item":"headphones"},
+  {"order_id":"ORD-1002","email":"mina@example.com","status":"in_transit","days_since_delivery":null,"tracking_stale_days":7,"item":"keyboard"},
+  {"order_id":"ORD-1003","email":"leo@example.com","status":"delivered","days_since_delivery":18,"tracking_stale_days":0,"item":"monitor"},
+  {"order_id":"ORD-1004","email":"sara@example.com","status":"return_approved","days_since_delivery":8,"tracking_stale_days":0,"item":"mouse"},
+  {"order_id":"ORD-1005","email":"noor@example.com","status":"refunded","days_since_delivery":12,"tracking_stale_days":0,"item":"webcam"}
+]
