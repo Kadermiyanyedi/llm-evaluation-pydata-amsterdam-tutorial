@@ -1753,7 +1753,7 @@ requires-dist = [
     { name = "langchain-openai", specifier = ">=1.6,<2" },
     { name = "langchain-openrouter", specifier = ">=0.1,<1" },
     { name = "langchain-qdrant", specifier = ">=1.1,<2" },
-    { name = "langfuse", specifier = ">=4,<5" },
+    { name = "langfuse", specifier = ">=4.14,<5" },
     { name = "langsmith", specifier = ">=0.4,<1" },
     { name = "pandas", specifier = ">=2.2,<4" },
     { name = "python-dotenv", specifier = ">=1.0,<2" },

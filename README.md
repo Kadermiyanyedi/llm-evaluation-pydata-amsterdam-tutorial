@@ -1,40 +1,126 @@
-# Evaluating LLM applications
+# LLM Evaluation in Production: A/B Testing and Observability
 
-A hands-on tutorial for PyData Amsterdam.
+Hands-on material for the PyData Amsterdam tutorial.
 
-## The problem
+This repository teaches how to evaluate LLM applications with repeatable
+datasets, controlled experiments, and Langfuse observability. It includes three
+small examples and one 60-minute end-to-end customer-support tutorial.
 
-Building a first LLM application is easy. Knowing whether you made it better is not.
+The central question is:
 
-You change a prompt, try two questions, and it feels good. You swap the model because a newer one came out. You add retrieval. Every one of those changes could have made the application worse, and without evaluation you find out when a user does.
+> When we change a prompt, model, tool, or retrieval system, how do we know the
+> application is actually better?
 
-## The solution
+## Tutorial
 
-Evaluation turns "it feels better" into a number you can compare.
+### Customer support
 
-It always has the same three parts: a **dataset** of test examples, the **application** under test, and an **evaluator** that scores what came out. Run them together and you get a score. Change one thing, run again, and the two numbers tell you whether the change helped.
+A 60-minute end-to-end application that brings the examples together: managed
+prompts, deterministic tools, in-memory and Qdrant RAG, Langfuse tracing,
+dataset experiments, metrics, and A/B testing.
 
-The tools change, the idea does not. These lessons use Langfuse, and the same three parts fit any evaluation platform.
+- [Tutorial guide](tutorial/README.md)
+- [Notebook](tutorial/customer_support.ipynb)
+- [Evaluation dataset](tutorial/evaluation_dataset.json)
 
-## The three lessons
+## Examples
 
-Each lesson stands on its own, and each one adds a harder thing to measure.
+The examples are independent lessons. Each folder includes its own
+README and notebook.
 
-| Lesson                                               | Application                      | The new problem                                                                            |
-| ---------------------------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------ |
-| [01 simple](examples/01_simple/)                     | A prompt and a model             | What are a dataset, a task and an evaluator?                                               |
-| [02 agent](examples/02_agent/)                       | An agent with tools              | The agent decides its own steps, so we score its actions, not only its words.              |
-| [03 rag](examples/03_rag/)                           | Retrieval plus generation        | Two parts can fail, so we score them separately.                                           |
-| [04 customer support](examples/04_customer_support/) | End-to-end production simulation | Offline evaluation, A/B routing, observability and rollout decisions in one product story. |
+### 01 — Simple LLM application
 
-Every lesson has a README that explains the ideas, and a notebook that runs them.
+Learn the basic evaluation loop: datasets, tasks, evaluators, traces, and
+controlled prompt or model comparisons.
 
-## Requirements
+- [Overview](examples/01_simple/README.md)
+- [Notebook](examples/01_simple/langchain.ipynb)
 
-| What                          | Why you need it                                                                                                                      |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| A free Langfuse Cloud project | Holds the prompts, datasets, traces and scores. You will spend as much time here as in the notebooks.                                |
-| An OpenRouter key             | One key for models from many providers, so swapping a model is a one line change. A full run of all three lessons costs a few cents. |
-| Docker or Podman, optional    | Only for the Qdrant version of lesson 03. The other version needs nothing.                                                           |
+### 02 — Agent
 
-Both keys go in a `.env` file, copied from `.env.example`.
+Evaluate agent behavior, tool calls, actions, and structured outputs.
+
+- [Overview](examples/02_agent/README.md)
+- [Notebook](examples/02_agent/langchain.ipynb)
+
+### 03 — RAG
+
+Evaluate retrieval and generation separately with in-memory and Qdrant vector
+stores.
+
+- [Overview](examples/03_rag/README.md)
+- [In-memory notebook](examples/03_rag/langchain_with_inmemory.ipynb)
+- [Qdrant notebook](examples/03_rag/langchain_with_qdrant.ipynb)
+
+## Quick start
+
+Requirements:
+
+- Python 3.13
+- [uv](https://docs.astral.sh/uv/)
+- an OpenRouter API key
+- a Langfuse project
+- Docker for Qdrant examples
+
+Install the environment and create your local configuration:
+
+```bash
+uv sync --locked
+cp .env.example .env
+```
+
+Add your real keys to `.env`:
+
+```env
+OPENROUTER_API_KEY=
+LANGFUSE_PUBLIC_KEY=
+LANGFUSE_SECRET_KEY=
+LANGFUSE_BASE_URL=https://cloud.langfuse.com
+QDRANT_URL=http://localhost:6333
+```
+
+Do not commit `.env`.
+
+Start Jupyter from the repository root:
+
+```bash
+uv run jupyter lab
+```
+
+## Langfuse prompts
+
+The notebooks use Langfuse Prompt Management instead of hardcoded system
+prompts. Create the prompt names and labels described inside the notebook you
+want to run.
+
+The customer-support tutorial requires:
+
+| Prompt                                 | Labels                                     |
+| -------------------------------------- | ------------------------------------------ |
+| `pydata-customer-support`              | `baseline` and `candidate` on two versions |
+| `pydata-customer-support-groundedness` | `production`                               |
+
+The exact prompt bodies and UI steps are in
+[`tutorial/customer_support.ipynb`](tutorial/customer_support.ipynb).
+
+## Qdrant
+
+The simple, agent, and in-memory RAG notebooks do not require Qdrant. Start the
+root Qdrant service before running a Qdrant notebook:
+
+```bash
+docker compose up -d
+docker compose ps
+```
+
+Qdrant is available at `http://localhost:6333`; its dashboard is at
+`http://localhost:6333/dashboard`.
+
+Stop it when finished:
+
+```bash
+docker compose down
+```
+
+For detailed setup, the full workshop flow, current experiment interpretation,
+and troubleshooting, see [`tutorial/README.md`](tutorial/README.md).

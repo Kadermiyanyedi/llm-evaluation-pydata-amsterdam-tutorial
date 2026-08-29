@@ -14,3 +14,9 @@ wheels/
 
 # Agent output files
 output/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+tutorial/.ipynb_checkpoints/
+
+.idea/
